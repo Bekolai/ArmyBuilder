@@ -14,7 +14,7 @@ public class Armors : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     if(Input.GetKeyDown(KeyCode.Z))
+    /* if(Input.GetKeyDown(KeyCode.Z))
         {
             foreach(GameObject armor in armor1)
             {
@@ -37,7 +37,7 @@ public class Armors : MonoBehaviour
                 }
 
             }
-        }
+        }*/
     }
 }
 
