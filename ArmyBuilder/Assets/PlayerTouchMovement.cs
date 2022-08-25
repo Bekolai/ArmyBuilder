@@ -5,15 +5,13 @@ using ETouch = UnityEngine.InputSystem.EnhancedTouch;
 
 public class PlayerTouchMovement : MonoBehaviour
 {
-    [SerializeField]
-    private Vector2 JoystickSize = new Vector2(300, 300);
-    [SerializeField]
-    private FloatingJoystick Joystick;
-    [SerializeField]
-    private NavMeshAgent Player;
+    [SerializeField] Vector2 JoystickSize = new Vector2(300, 300);
+    [SerializeField] FloatingJoystick Joystick;
+    [SerializeField] AnimController animController;
+    [SerializeField] NavMeshAgent Player;
 
-    private Finger MovementFinger;
-    private Vector2 MovementAmount;
+     Finger MovementFinger;
+     Vector2 MovementAmount;
 
     private void OnEnable()
     {
@@ -56,6 +54,7 @@ public class PlayerTouchMovement : MonoBehaviour
 
             Joystick.Knob.anchoredPosition = knobPosition;
             MovementAmount = knobPosition / maxMovement;
+            animController.startWalking();
         }
     }
 
@@ -67,6 +66,7 @@ public class PlayerTouchMovement : MonoBehaviour
             Joystick.Knob.anchoredPosition = Vector2.zero;
             Joystick.gameObject.SetActive(false);
             MovementAmount = Vector2.zero;
+            animController.stopWalking();
         }
     }
 
