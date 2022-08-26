@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5284882672787032747}
   - component: {fileID: 5284882672787032746}
   - component: {fileID: 5284882672787032745}
+  - component: {fileID: 2052160916543687190}
   m_Layer: 0
   m_Name: BuyObject
   m_TagString: Untagged
@@ -129,8 +130,24 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.67, y: 2.220446e-16, z: 8.52}
+  m_Size: {x: 8.67, y: 0.44, z: 8.52}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2052160916543687190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5284882672787032743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e012d591a53104408c470b6484cb036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
+  land: {fileID: 7710424268711761239}
+  slider: {fileID: 0}
+  BuyTime: 2
 --- !u!1 &5284882673289897247
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,5 +380,10 @@ PrefabInstance:
 --- !u!4 &6938708549932273645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4643542293560950360, guid: db816c73528a19544a586fea68dee79d, type: 3}
+  m_PrefabInstance: {fileID: 2322190224993431989}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7710424268711761239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5420924040586175714, guid: db816c73528a19544a586fea68dee79d, type: 3}
   m_PrefabInstance: {fileID: 2322190224993431989}
   m_PrefabAsset: {fileID: 0}

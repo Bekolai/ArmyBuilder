@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 8345832943824807817}
   - component: {fileID: 8345832943824807816}
   - component: {fileID: 8345832943824807927}
+  - component: {fileID: 5681561248356801051}
   m_Layer: 0
   m_Name: BuyObject
   m_TagString: Untagged
@@ -268,8 +269,24 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.67, y: 2.220446e-16, z: 8.52}
+  m_Size: {x: 8.67, y: 0.74, z: 8.52}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5681561248356801051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8345832943824807925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e012d591a53104408c470b6484cb036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
+  land: {fileID: 9156718583907310395}
+  slider: {fileID: 0}
+  BuyTime: 2
 --- !u!1 &8345832944560074377
 GameObject:
   m_ObjectHideFlags: 0
