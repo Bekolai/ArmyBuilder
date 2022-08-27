@@ -12,8 +12,8 @@ public class PlayerTouchMovement : MonoBehaviour
 
      Finger MovementFinger;
      Vector2 MovementAmount;
-
-    private void OnEnable()
+    float _speed;
+     void OnEnable()
     {
         EnhancedTouchSupport.Enable();
         ETouch.Touch.onFingerDown += HandleFingerDown;
@@ -21,15 +21,18 @@ public class PlayerTouchMovement : MonoBehaviour
         ETouch.Touch.onFingerMove += HandleFingerMove;
     }
 
-    private void OnDisable()
-    {
+     void OnDisable()
+    { 
+      
         ETouch.Touch.onFingerDown -= HandleFingerDown;
         ETouch.Touch.onFingerUp -= HandleLoseFinger;
         ETouch.Touch.onFingerMove -= HandleFingerMove;
         EnhancedTouchSupport.Disable();
+       
+
     }
 
-    private void HandleFingerMove(Finger MovedFinger)
+     void HandleFingerMove(Finger MovedFinger)
     {
         if (MovedFinger == MovementFinger)
         {
@@ -58,7 +61,7 @@ public class PlayerTouchMovement : MonoBehaviour
         }
     }
 
-    private void HandleLoseFinger(Finger LostFinger)
+     void HandleLoseFinger(Finger LostFinger)
     {
         if (LostFinger == MovementFinger)
         {
@@ -70,7 +73,7 @@ public class PlayerTouchMovement : MonoBehaviour
         }
     }
 
-    private void HandleFingerDown(Finger TouchedFinger)
+     void HandleFingerDown(Finger TouchedFinger)
     {
       //  if (MovementFinger == null && TouchedFinger.screenPosition.x <= Screen.width / 2f)
             if (MovementFinger == null && TouchedFinger.screenPosition.y <= Screen.height / 2f)
@@ -83,7 +86,7 @@ public class PlayerTouchMovement : MonoBehaviour
         }
     }
 
-    private Vector2 ClampStartPosition(Vector2 StartPosition)
+     Vector2 ClampStartPosition(Vector2 StartPosition)
     {
         if (StartPosition.x < JoystickSize.x / 2)
         {
@@ -102,7 +105,7 @@ public class PlayerTouchMovement : MonoBehaviour
         return StartPosition;
     }
 
-    private void Update()
+     void Update()
     {
         Vector3 scaledMovement = Player.speed * Time.deltaTime * new Vector3(
             MovementAmount.x,
@@ -113,6 +116,7 @@ public class PlayerTouchMovement : MonoBehaviour
         Player.transform.LookAt(Player.transform.position + scaledMovement, Vector3.up);
         Player.Move(scaledMovement);
     }
+
 
     /*private void OnGUI()
     {
@@ -136,4 +140,16 @@ public class PlayerTouchMovement : MonoBehaviour
 
         GUI.Label(new Rect(10, 10, 500, 20), $"Screen Size ({Screen.width}, {Screen.height})", labelStyle);
     }*/
+    public void StopMovement()
+    {
+        _speed = Player.speed;
+        Player.speed = 0f;
+        MovementAmount = Vector2.zero;
+        animController.stopWalking();
+    }
+    public void StartMovement()
+    {
+         Player.speed= _speed;
+      
+    }
 }

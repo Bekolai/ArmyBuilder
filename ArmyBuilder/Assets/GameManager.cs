@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] int gold;
+    [SerializeField] Text goldText, armorText, swordText,soldierText;
 
 
 
@@ -22,7 +24,7 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-
+        UpdateTextUI();
     }
 
     // Update is called once per frame
@@ -30,18 +32,11 @@ public class GameManager : MonoBehaviour
     {
 
     }
-    public int GetGold()
+    public void UpdateTextUI()
     {
-        return gold;
-    }
-    public void BuySuccesfull(int price,string Bought)
-    {
-        gold -= price;
-        switch(Bought)
-        {
-            case "Blacksmith":break;
-            case "Armory": break;
-            case "Barracks": break;
-        }
+        goldText.text = PlayerPrefs.GetInt("Gold").ToString();
+        armorText.text = PlayerPrefs.GetInt("Armor").ToString();
+        swordText.text = PlayerPrefs.GetInt("Sword").ToString();
+        soldierText.text=(PlayerPrefs.GetInt("Soldiers").ToString())+"/"+((PlayerPrefs.GetInt("Barracks")+1)*20).ToString();
     }
 }

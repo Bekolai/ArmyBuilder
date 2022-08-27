@@ -100,7 +100,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "BUY \nARMORY"
+  m_text: "BUY \nArmour Dealer"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -109,8 +109,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284371179
+  m_fontColor: {r: 0.92156863, g: 0.3137255, b: 0.36862746, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.75
+  m_fontSize: 23.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -217,6 +217,7 @@ GameObject:
   - component: {fileID: 2257884969316312085}
   - component: {fileID: 2257884969316312084}
   - component: {fileID: 2257884969316312087}
+  - component: {fileID: 1647094089}
   m_Layer: 0
   m_Name: BuyObject
   m_TagString: Untagged
@@ -303,6 +304,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.67, y: 0.52, z: 8.52}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1647094089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257884969316312089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e012d591a53104408c470b6484cb036, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
+  land: {fileID: 8548026556967645968}
+  slider: {fileID: 0}
+  BuyTime: 2
+  goldText: {fileID: 2257884968746470335}
 --- !u!1001 &470356426091380669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -310,6 +328,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2257884969016672948}
     m_Modifications:
+    - target: {fileID: 2201381314015176924, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.84082496
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201381314015176924, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.84082496
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201381314015176924, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.84082496
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201381314015176924, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.4541
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201381314015176924, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.655
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201381314015176924, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.3416
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201381314015176924, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710397
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201381314015176924, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.002009441
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201381314015176924, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0020094416
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201381314015176924, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.70710397
+      objectReference: {fileID: 0}
+    - target: {fileID: 2201381314015176924, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -0.326
+      objectReference: {fileID: 0}
     - target: {fileID: 8081633047953722541, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
       propertyPath: m_Name
       value: ArmoryHouse
@@ -360,6 +422,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+--- !u!1 &8548026556967645968 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8081633047953722541, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}
+  m_PrefabInstance: {fileID: 470356426091380669}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9073451915401570730 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8893600860746454551, guid: d67c9258bdb2bb24998ba0898523d7e6, type: 3}

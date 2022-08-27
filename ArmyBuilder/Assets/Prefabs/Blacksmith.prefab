@@ -148,6 +148,7 @@ MonoBehaviour:
   land: {fileID: 7710424268711761239}
   slider: {fileID: 0}
   BuyTime: 2
+  goldText: {fileID: 5284882673289897217}
 --- !u!1 &5284882673289897247
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +249,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "BUY \nBLACKSMITH"
+  m_text: 'BUY
+
+    Weapon Dealer'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -257,8 +260,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4284371179
+  m_fontColor: {r: 0.92156863, g: 0.3137255, b: 0.36862746, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -275,7 +278,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12.55
+  m_fontSize: 21.4
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -374,6 +377,10 @@ PrefabInstance:
     - target: {fileID: 5420924040586175714, guid: db816c73528a19544a586fea68dee79d, type: 3}
       propertyPath: m_Name
       value: blacksmithHouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420924040586175714, guid: db816c73528a19544a586fea68dee79d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db816c73528a19544a586fea68dee79d, type: 3}
