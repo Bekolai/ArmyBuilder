@@ -93,4 +93,77 @@ public class ShopManager : MonoBehaviour
             case "Armour Shop": PlayerPrefs.SetInt("Armory", (PlayerPrefs.GetInt("Armory") + 1)); break;
         }
     }
+    public void UpgradeSoldier()
+    {
+        if (PlayerPrefs.GetInt("Gold") >= soldier1Upgrade.x && PlayerPrefs.GetInt("Armor")>= soldier1Upgrade.y && 
+            PlayerPrefs.GetInt("Sword") >= soldier1Upgrade.z && PlayerPrefs.GetInt("Soldiers") >= 1)
+        {
+
+            if (LevelManager.Instance.UpgradeSoldierLevel1()) // if upgrade succesfull decrease price
+            {
+                PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") - (int)soldier1Upgrade.x);
+                PlayerPrefs.SetInt("Armor", PlayerPrefs.GetInt("Armor") - (int)soldier1Upgrade.y);
+                PlayerPrefs.SetInt("Sword", PlayerPrefs.GetInt("Sword") - (int)soldier1Upgrade.z);
+                PlayerPrefs.SetInt("Soldiers", PlayerPrefs.GetInt("Soldiers") - 1);
+                PlayerPrefs.SetInt("SoldierLevel1", PlayerPrefs.GetInt("SoldierLevel1") + 1);
+                GameManager.Instance.UpdateTextUI();
+            }
+            
+        }
+        else
+            Debug.Log("Buy failed or limit");
+
+    }
+    public void UpgradeSoldierLevel2()
+    {
+        if (PlayerPrefs.GetInt("Gold") >= soldier2Upgrade.x && PlayerPrefs.GetInt("Armor") >= soldier2Upgrade.y &&
+            PlayerPrefs.GetInt("Sword") >= soldier2Upgrade.z && PlayerPrefs.GetInt("SoldierLevel1") >= 1)
+        {
+           
+            if (LevelManager.Instance.UpgradeSoldierLevel2()) // if upgrade succesfull decrease price
+            {
+
+                PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") - (int)soldier2Upgrade.x);
+                PlayerPrefs.SetInt("Armor", PlayerPrefs.GetInt("Armor") - (int)soldier2Upgrade.y);
+                PlayerPrefs.SetInt("Sword", PlayerPrefs.GetInt("Sword") - (int)soldier2Upgrade.z);
+                PlayerPrefs.SetInt("SoldierLevel1", PlayerPrefs.GetInt("SoldierLevel1") - 1);
+                PlayerPrefs.SetInt("SoldierLevel2", PlayerPrefs.GetInt("SoldierLevel2") + 1);
+                GameManager.Instance.UpdateTextUI();
+            }
+
+        }
+        else
+            Debug.Log("Buy failed or limit");
+
+    }
+    public void UpgradePlayer()
+    {
+        if (PlayerPrefs.GetInt("Gold") >= soldier1Upgrade.x && PlayerPrefs.GetInt("Armor") >= soldier1Upgrade.y &&
+            PlayerPrefs.GetInt("Sword") >= soldier1Upgrade.z)
+        {
+            if (LevelManager.Instance.UpgradePlayerLevel1()) // if upgrade succesfull decrease price
+            {
+                PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") - (int)soldier1Upgrade.x);
+                PlayerPrefs.SetInt("Armor", PlayerPrefs.GetInt("Armor") - (int)soldier1Upgrade.y);
+                PlayerPrefs.SetInt("Sword", PlayerPrefs.GetInt("Sword") - (int)soldier1Upgrade.z);
+                PlayerPrefs.SetInt("PlayerLevel", 1);
+                GameManager.Instance.UpdateTextUI();
+            }
+        }
+    }
+    public void UpgradePlayerLevel2()
+    {
+        if (PlayerPrefs.GetInt("Gold") >= soldier2Upgrade.x && PlayerPrefs.GetInt("Armor") >= soldier2Upgrade.y &&
+            PlayerPrefs.GetInt("Sword") >= soldier2Upgrade.z)
+        {
+            if (LevelManager.Instance.UpgradePlayerLevel2()) // if upgrade succesfull decrease price
+            {
+                PlayerPrefs.SetInt("Gold", PlayerPrefs.GetInt("Gold") - (int)soldier2Upgrade.x);
+                PlayerPrefs.SetInt("Armor", PlayerPrefs.GetInt("Armor") - (int)soldier2Upgrade.y);
+                PlayerPrefs.SetInt("Sword", PlayerPrefs.GetInt("Sword") - (int)soldier2Upgrade.z);
+                PlayerPrefs.SetInt("PlayerLevel", 2);
+                GameManager.Instance.UpdateTextUI();
+            }
+        }
+    }
 }
