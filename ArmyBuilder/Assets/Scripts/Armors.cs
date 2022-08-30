@@ -8,47 +8,30 @@ public class Armors : MonoBehaviour
     [SerializeField] List<GameObject> swordBelt, swordHand;
     bool WarMap;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        WarMap = GameManager.Instance.WarMap();
 
-      if (WarMap)
-        {
-            swordHand[0].SetActive(true);
-        }
-      else
-        {
-            swordBelt[0].SetActive(true);
-        }
+
+
+        Level0();
     }
 
     // Update is called once per frame
     void Update()
     {
-    /* if(Input.GetKeyDown(KeyCode.Z))
+   
+    }
+    public void Level0()
+    {
+        if (GameManager.Instance.WarMap())
         {
-            foreach(GameObject armor in armor1)
-            {
-                armor.SetActive(true);
-                foreach (GameObject otherarmor in armor2)
-                { 
-                otherarmor.SetActive(false);
-                }
-
-            }
+            swordHand[0].SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.X))
+        else
         {
-            foreach (GameObject armor in armor2)
-            {
-                armor.SetActive(true);
-                foreach (GameObject otherarmor in armor1)
-                {
-                    otherarmor.SetActive(false);
-                }
+            swordBelt[0].SetActive(true);
+        }
 
-            }
-        }*/
     }
     public void Level1()
     {
@@ -61,15 +44,17 @@ public class Armors : MonoBehaviour
             }
 
         }
-        if (WarMap)
+        if (GameManager.Instance.WarMap())
         { 
-            swordHand[0].SetActive(true);
+            swordHand[0].SetActive(false);
             swordHand[1].SetActive(true);
+    
         }
         else
         {
             swordBelt[0].SetActive(false);
             swordBelt[1].SetActive(true);
+            
         }
     }
     public void Level2()
@@ -83,17 +68,22 @@ public class Armors : MonoBehaviour
             }
 
         }
-        if (WarMap)
+        
+        if (GameManager.Instance.WarMap())
         {
+            
+            swordHand[2].SetActive(true);
             swordHand[0].SetActive(false);
             swordHand[1].SetActive(false);
-            swordHand[2].SetActive(true);
+        
         }
         else
         {
+          
+            swordBelt[2].SetActive(true);
             swordBelt[0].SetActive(false);
             swordBelt[1].SetActive(false);
-            swordBelt[2].SetActive(true);
+            
         }
     }
 }

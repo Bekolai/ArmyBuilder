@@ -24,12 +24,16 @@ public class Soldier : MonoBehaviour
     {
         soldierLevel = SoldierLevel.Level1;
         GetComponent<Armors>().Level1();
+        healthPoint += 20;
+        damage += 5;
         //hp and damage upgrade
     }
     public void SoldierLevel2()
     {
         soldierLevel = SoldierLevel.Level2;
         GetComponent<Armors>().Level2();
+        healthPoint += 50;
+        damage += 15;
         //hp and damage upgrade
     }
 }

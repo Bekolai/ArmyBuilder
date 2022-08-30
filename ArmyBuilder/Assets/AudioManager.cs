@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
-    [SerializeField] AudioClip buyClip, buyfailCLip, buildClip, upgradeClip;
+    [SerializeField] AudioClip buyClip, buyfailCLip, buildClip, upgradeClip,warHornClip;
 
     public static AudioManager Instance { get; private set; }
     private void Awake()
@@ -45,6 +45,10 @@ public class AudioManager : MonoBehaviour
     public void PlayUpgrade()
     {
         audioSource.PlayOneShot(upgradeClip, 0.6f);
+    }
+    public void PlayWarHorn()
+    {
+        audioSource.PlayOneShot(warHornClip, 0.6f);
     }
 
 }

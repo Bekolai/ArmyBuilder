@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -212,5 +212,38 @@ public class LevelManager : MonoBehaviour
             }
             else
                  return false; // if there is no level 1 soldiers dont upgrade
+    }
+    public void EasyWar()
+    {
+        int enemyCount = (int)(soldiers.Count * 0.6);
+        if (enemyCount == 0)
+        {
+            enemyCount = 1;
+        }
+        Debug.Log(enemyCount);
+        PlayerPrefs.SetInt("EnemyCreated", enemyCount);
+        SceneManager.LoadScene(1);
+    }
+    public void MediumWar()
+    {
+        int enemyCount = (int)(soldiers.Count * 1);
+        if (enemyCount == 0)
+        {
+            enemyCount = 1;
+        }
+        Debug.Log(enemyCount);
+        PlayerPrefs.SetInt("EnemyCreated", enemyCount);
+        SceneManager.LoadScene(1);
+    }
+    public void HardWar()
+    {
+        int enemyCount = (int)(soldiers.Count * 1.5);
+        if (enemyCount == 0)
+        {
+            enemyCount = 1;
+        }
+        Debug.Log(enemyCount);
+        PlayerPrefs.SetInt("EnemyCreated", enemyCount);
+        SceneManager.LoadScene(1);
     }
 }
