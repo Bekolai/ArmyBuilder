@@ -51,6 +51,16 @@ MonoBehaviour:
   buildClip: {fileID: 8300000, guid: 5ce3c5feecba7074891284e048ea6fb7, type: 3}
   upgradeClip: {fileID: 8300000, guid: 70c24fd5d14de604ab97a66a2dd256ff, type: 3}
   warHornClip: {fileID: 8300000, guid: 4e62e9f9fd5a4894bb62a072a237c7f3, type: 3}
+  swordClip:
+  - {fileID: 8300000, guid: 5595b3970850a1c468553dd35d382344, type: 3}
+  - {fileID: 8300000, guid: 9ea6dd5cc1b702c43ae9c1f82fb72754, type: 3}
+  - {fileID: 8300000, guid: 71f120f9b57d50e488ce8f2dd316cabb, type: 3}
+  - {fileID: 8300000, guid: e0766f03272f84641b472354ef972eeb, type: 3}
+  - {fileID: 8300000, guid: a13399e41c1beae44828eeaab358e351, type: 3}
+  - {fileID: 8300000, guid: 25e3ef8cb32942348b881f207f8e848f, type: 3}
+  - {fileID: 8300000, guid: 98d45139e5955604c81291f9222c3dde, type: 3}
+  - {fileID: 8300000, guid: 1b0d52ff95adcb845a5902233f11823a, type: 3}
+  - {fileID: 8300000, guid: 951e7f701d3c61c419e4dd2692fcf248, type: 3}
 --- !u!82 &7383853120909226127
 AudioSource:
   m_ObjectHideFlags: 0

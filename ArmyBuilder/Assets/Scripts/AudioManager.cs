@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip buyClip, buyfailCLip, buildClip, upgradeClip,warHornClip;
+    [SerializeField] AudioClip[] swordClip,battleCryClip;
 
     public static AudioManager Instance { get; private set; }
     private void Awake()
@@ -49,6 +50,14 @@ public class AudioManager : MonoBehaviour
     public void PlayWarHorn()
     {
         audioSource.PlayOneShot(warHornClip, 0.6f);
+    }
+    public void PlaySwordClip()
+    {
+        audioSource.PlayOneShot(swordClip[Random.Range(0,swordClip.Length)], 0.3f);
+    }
+    public void PlayBattleCryClip()
+    {
+        audioSource.PlayOneShot(battleCryClip[Random.Range(0, battleCryClip.Length)], 0.4f);
     }
 
 }

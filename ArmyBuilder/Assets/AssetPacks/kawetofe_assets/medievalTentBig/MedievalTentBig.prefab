@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 2651461926540285646}
   - component: {fileID: 5023938341038777410}
   - component: {fileID: 7219369437337775726}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpgradeObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

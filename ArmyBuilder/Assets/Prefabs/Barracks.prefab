@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 6161598355814341461}
   - component: {fileID: 6121197044354901012}
   - component: {fileID: 188389878078510061}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpgradeObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 8345832943824807816}
   - component: {fileID: 8345832943824807927}
   - component: {fileID: 5681561248356801051}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BuyObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,7 +599,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e012d591a53104408c470b6484cb036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 0
+  gold: 250
   land: {fileID: 9156718583907310395}
   slider: {fileID: 0}
   BuyTime: 2

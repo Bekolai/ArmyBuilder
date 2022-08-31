@@ -18,4 +18,8 @@ public class AnimController : MonoBehaviour
     {
         animator.SetBool("Walk", false);
     }
+    public void PlayCheer()
+    {
+        animator.Play("Cheer");
+    }
 }

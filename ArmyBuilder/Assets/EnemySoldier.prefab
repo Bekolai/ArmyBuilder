@@ -571,6 +571,69 @@ Transform:
   m_Father: {fileID: 2883385134654661658}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -76.23746, y: -1.7201908, z: -9.941166}
+--- !u!1 &3585043147068900752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5221393943206536640}
+  - component: {fileID: 2723027408612647724}
+  - component: {fileID: 4935379573537529208}
+  m_Layer: 9
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5221393943206536640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585043147068900752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4396766832546719859}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2723027408612647724
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585043147068900752}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4935379573537529208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3585043147068900752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02f18e95e490ab04482d6a5762a89611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 2723027408612647724}
+  Damage: 10
+  AttackDelay: 1.45
+  enemyMovement: {fileID: 6404855749403219216}
+  isPlayer: 0
 --- !u!1 &3719850726434288758
 GameObject:
   m_ObjectHideFlags: 0
@@ -618,7 +681,9 @@ GameObject:
   - component: {fileID: 4219535708219473052}
   - component: {fileID: 635396255144851616}
   - component: {fileID: 3963269977108049936}
-  m_Layer: 0
+  - component: {fileID: 7434110086935097024}
+  - component: {fileID: 6404855749403219216}
+  m_Layer: 8
   m_Name: EnemySoldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,6 +704,7 @@ Transform:
   m_Children:
   - {fileID: 3600562206716796229}
   - {fileID: 2778082277645230811}
+  - {fileID: 5221393943206536640}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -706,14 +772,14 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
+  m_ObstacleAvoidanceType: 1
 --- !u!114 &4219535708219473052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -775,6 +841,42 @@ MonoBehaviour:
   healthPoint: 50
   damage: 15
   soldierLevel: 0
+  attackRadius: {fileID: 4935379573537529208}
+  enemy: {fileID: 7434110086935097024}
+  player: {fileID: 0}
+  isPlayer: 0
+--- !u!114 &7434110086935097024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3913527535372792521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4feffa643ba9687448013289c701daf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackRadius: {fileID: 4935379573537529208}
+  Animator: {fileID: 4219535708219473044}
+  Movement: {fileID: 6404855749403219216}
+  Agent: {fileID: 4219535708219473055}
+  Health: 100
+--- !u!114 &6404855749403219216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3913527535372792521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa85082eb56c0c94eae82794e6b5fbbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  UpdateRate: 0.1
+  Animator: {fileID: 4219535708219473044}
 --- !u!1 &3993712068216124876
 GameObject:
   m_ObjectHideFlags: 0

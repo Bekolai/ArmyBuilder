@@ -56,4 +56,8 @@ public class GameManager : MonoBehaviour
     {
         return isWarMap;
     }
+    public void LoadVillage()
+    {
+        SceneManager.LoadScene("Village");
+    }
 }

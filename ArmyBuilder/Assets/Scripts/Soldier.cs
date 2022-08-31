@@ -6,9 +6,22 @@ public class Soldier : MonoBehaviour
 {
     [SerializeField] int healthPoint, damage;
     [SerializeField] SoldierLevel soldierLevel;
+    [SerializeField] AttackRadius attackRadius;
+    [SerializeField] Enemy enemy;
+    [SerializeField] Player player;
+    public bool isPlayer,isVillage;
     void Start()
     {
-    
+        if (isPlayer && !isVillage)
+        {
+            player.UpdateHealth(healthPoint);
+            attackRadius.UpdateDamage(damage);
+        }
+        else if(!isVillage)
+        {
+            enemy.UpdateHealth(healthPoint);
+            attackRadius.UpdateDamage(damage);
+        }
     }
 
     // Update is called once per frame
@@ -26,7 +39,17 @@ public class Soldier : MonoBehaviour
         GetComponent<Armors>().Level1();
         healthPoint += 20;
         damage += 5;
-        //hp and damage upgrade
+        //hp and damage upgrade.
+        if (isPlayer && !isVillage)
+        {
+            player.UpdateHealth(healthPoint);
+            attackRadius.UpdateDamage(damage);
+        }
+        else if(!isVillage)
+        {
+            enemy.UpdateHealth(healthPoint);
+            attackRadius.UpdateDamage(damage);
+        }
     }
     public void SoldierLevel2()
     {
@@ -35,5 +58,23 @@ public class Soldier : MonoBehaviour
         healthPoint += 50;
         damage += 15;
         //hp and damage upgrade
+        if (isPlayer && !isVillage)
+        {
+            player.UpdateHealth(healthPoint);
+            attackRadius.UpdateDamage(damage);
+        }
+        else if (!isVillage)
+        {
+            enemy.UpdateHealth(healthPoint);
+            attackRadius.UpdateDamage(damage);
+        }
+    }
+    public int GetDamage()
+    {
+        return damage;
+    }
+    public int GetHP()
+    {
+        return healthPoint;
     }
 }

@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 4260429343391394887}
   - component: {fileID: 3291279759222802847}
   - component: {fileID: 8348646961870986373}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpgradeObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -366,6 +366,11 @@ MonoBehaviour:
   healthPoint: 0
   damage: 0
   soldierLevel: 0
+  attackRadius: {fileID: 0}
+  enemy: {fileID: 0}
+  player: {fileID: 0}
+  isPlayer: 0
+  isVillage: 1
 --- !u!1 &1848039685676712194
 GameObject:
   m_ObjectHideFlags: 0

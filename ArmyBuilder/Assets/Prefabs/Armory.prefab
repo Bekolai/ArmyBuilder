@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 2257884969316312084}
   - component: {fileID: 2257884969316312087}
   - component: {fileID: 1647094089}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BuyObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e012d591a53104408c470b6484cb036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 0
+  gold: 100
   land: {fileID: 8548026556967645968}
   slider: {fileID: 0}
   BuyTime: 2
